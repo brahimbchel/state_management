@@ -1,11 +1,23 @@
+import { useContext } from "react";
+import { AppContext } from "./context/AppContext";
 
 function App() {
+  const context = useContext(AppContext);
+
+  if (!context) {
+    throw new Error("App must be used within an AppProvider");
+  }
+
+  const { isAuth, setIsAuth } = context;
 
   return (
-    <>
-      hello
-    </>
-  )
+    <div>
+      <h1>{isAuth ? "User is authenticated" : "User is not authenticated"}</h1>
+      <button onClick={() => setIsAuth(!isAuth)}>
+        {isAuth ? "Logout" : "Login"}
+      </button>
+    </div>
+  );
 }
 
-export default App
+export default App;
