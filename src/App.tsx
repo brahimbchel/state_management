@@ -14,7 +14,7 @@ function App() {
     <div>
       <h1>{isAuth ? "User is authenticated" : "User is not authenticated"}</h1>
       <button onClick={() => setIsAuth(!isAuth)}>
-        {isAuth ? "Logout" : "Login"}
+        {isAuth ? "Log Out" : "Log In"}
       </button>
     </div>
   );
