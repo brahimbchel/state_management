@@ -9,7 +9,7 @@ interface CounterState {
 }
 
 export const useCounterStore = create<CounterState>((set) => ({
-  count: 0,
+  count: 16,
   increment: () => set((state) => ({ count: state.count + 1 })),
   decrement: () => set((state) => ({ count: state.count - 1 })),
   incrementBy: (value) => set((state) => ({ count: state.count + value })),
