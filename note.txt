@@ -1,0 +1,16 @@
+best practice advice from: https://www.youtube.com/watch?v=_ngCLZ5Iz-0&t=253s
+
+FIRST:
+ 1- const count = useCounterStore((state) => state.count);
+ 2- const { count } = useCounterStore((state) => state);
+
+1 is better then 2 , because in the 2 when every state value in the store change it render the components again 
+
+SECOND:
+ when you define your store group them by specifics features
+ in our store the useCounterStore only focus on the count functionality it dosnt have another thing to do
+ if we want to have extra functionality exemple auth we create another store call it useAuthStore 
+  and store the state relate it to the auth
+ that make it more moduler and you can have them in seperate files and for each components need specefic state
+  will import it from that store and not from giga file contain all the states
+ and it will make it easy to add functionalityto the app and easy to maintane
